@@ -12,28 +12,22 @@ $(document).ready(function () {
     container.imagesLoaded(function () {
        container.masonry({
            itemSelector: '.item-massonry',
-           columnWidth: 63,
+           columnWidth: 7,
            gutter: 1,
-           fitWidth: true,
-           horizontalOrder: true
+        stagger: 30,
+        fitWidth: true,
+        singleMode: false          
        });
-    });
-  /*  container.masonry({
-           itemSelector: '.item-massonry',
-           columnWidth: 63,
-           gutter: 1,
-           fitWidth: true,
-           horizontalOrder: true
-       });*/
+    }); 
 
     container.on('click', '.item-massonry', function () {
         $(this).toggleClass('grid-item--gigante');
         container.masonry();
     });
    
-    $('#gallery-btn').on('click', function () {
+   /* $('#gallery-btn').on('click', function () {
         $('.item-massonry.hidden').css("display", "block");
-        });
+        });*/
     
      $("#gallery-btn").on('dblclick', function (event) {
         $(this).hide();

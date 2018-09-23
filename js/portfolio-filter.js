@@ -40,7 +40,7 @@ $(document).ready(function () {
         });
     });
     //show and hiden btn
-    $("#portfolio-btn").on('dblclick', function (event) {
+    $("#portfolio-btn").on('click', function (event) {
         $(this).hide();
     });
     $('body').on('click', function (event) {

@@ -29,19 +29,27 @@ $(document).ready(function () {
         $('.item-massonry.hidden').css("display", "block");
         });*/
     
-     $("#gallery-btn").on('dblclick', function (event) {
+      //show and hiden btn
+    $("#gallery-btn").on('click', function (event) {
         $(this).hide();
     });
     $('body').on('click', function (event) {
-            let id = $(event.target).attr('id');
-            if (id !== '#gallery-btn') {
-                $('#gallery-btn').show().css("display", "block");
-            }
-            });
-    $(window).load(function(){
+        let id = $(event.target).attr('id');
+        if (id !== 'gallery-btn') {
+            $('#gallery-btn').show().css("display", "block");
+        }
+    });
+   /* $(window).load(function(){
         setTimeout(function() {
             $('.load-wrapp').fadeOut('slow',function() {});
         }, 3000);
+        });*/
+     $("#gallery-btn").on('click',function(){        
+        $(".item-massonry.hidden").each(function() {
+            $(this).removeClass('hidden');
         });
-    
+        if ($(".item-massonry.hidden").length==0) {
+            $("#gallery-btn").addClass('hidden');
+        }
+});
 });

@@ -1,35 +1,30 @@
 $(document).ready(function () {
     jQuery('.item-massonry').hover(
         function () {
-            $(this).find('.cover-item-gallery').fadeIn();
+            $(this).find('.cover-item-gallery').css('display', 'flex');
         },
         function () {
-            $(this).find('.cover-item-gallery').fadeOut();
+            $(this).find('.cover-item-gallery').css('display', 'none');
         }
     );
 
     let container = $('#gallery');
     container.imagesLoaded(function () {
-       container.masonry({
-           itemSelector: '.item-massonry',
-           columnWidth: 7,
-           gutter: 1,
-        stagger: 30,
-        fitWidth: true,
-        singleMode: false          
-       });
-    }); 
+        container.masonry({
+            itemSelector: '.item-massonry',
+            columnWidth: 7,
+            gutter: 1,
+            stagger: 30,
+            fitWidth: true,
+            singleMode: false
+        });
+    });
 
     container.on('click', '.item-massonry', function () {
         $(this).toggleClass('grid-item--gigante');
         container.masonry();
     });
-   
-   /* $('#gallery-btn').on('click', function () {
-        $('.item-massonry.hidden').css("display", "block");
-        });*/
-    
-      //show and hiden btn
+    //show and hiden btn
     $("#gallery-btn").on('click', function (event) {
         $(this).hide();
     });
@@ -39,17 +34,18 @@ $(document).ready(function () {
             $('#gallery-btn').show().css("display", "block");
         }
     });
-   /* $(window).load(function(){
-        setTimeout(function() {
-            $('.load-wrapp').fadeOut('slow',function() {});
-        }, 3000);
-        });*/
-     $("#gallery-btn").on('click',function(){        
-        $(".item-massonry.hidden").each(function() {
+    /* $(window).load(function(){
+         setTimeout(function() {
+             $('.load-wrapp').fadeOut('slow',function() {});
+         }, 3000);
+         });*/
+    $("#gallery-btn").on('click', function () {
+        $(".item-massonry.hidden").each(function () {
             $(this).removeClass('hidden');
+            container.masonry();
         });
-        if ($(".item-massonry.hidden").length==0) {
-            $("#gallery-btn").addClass('hidden');
+        if ($(".item-massonry.hidden").length == 0) {
+            $("#gallery-btn").addClass('hidden');             
         }
-});
+    });
 });

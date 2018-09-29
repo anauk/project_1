@@ -1044,37 +1044,36 @@ margin: 0 px;
 
 /*-----------------------------------section GALLERY-------------------------*/
 
-
 .item-massonry {    
     margin-bottom: 10px;
     width: 115px;
     height: 88px;
     float: left;
-    
-    
+    max-width: 100%;
 }
 .item-massonry-width2 {
     width: 180px;
 }
 .item-massonry-height2 {
-    height: 138px;
+    height: auto;
 }
 .item-massonry-width3 {
     width: 370px;
 }
 .item-massonry-height3 {
-    height: 260px;
+    height: auto;
 }
 .item-massonry-height5 {
-    height: 290px;
+    height: auto;
 }
 .item-massonry-height4{
-    height: 380px;
+    height: auto;
 }
 .item-massonry img {
     display: block;
   max-width: 100%;
     position: relative;
+    width: 100%;
 }
 .item-massonry.hidden {
     display: none;
@@ -1084,18 +1083,19 @@ margin: 0 px;
    height: 100%;
 }
 
+/*
 .item-massonry:hover .cover-item-gallery {
     opacity: 0.5;
 }
+*/
 .cover-item-gallery {   
-     background-color: rgb(0, 0, 0, 0.4);
+     background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     width: 100%;
-    top: 0;
-    opacity: 0;
+    top: 0;    
     bottom: 0;   
     transition: 0.4s;    
-    display: flex;
+    display: none;
    justify-content: center;
     align-items: center;
     
